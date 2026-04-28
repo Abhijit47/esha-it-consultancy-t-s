@@ -11,13 +11,15 @@ import avatar3 from '/assets/img/avatar/avatar-3.jpg'
 import image from '/assets/img/blog/blog-details.png'
 import icon from '/assets/img/icon/blog-details-quote.png'
 
+const url = import.meta.env.VITE_MY_APP_URL
+
 export const Route = createFileRoute('/blogs/$blogId')({
   loader: async ({ params }) => {
     const { blogId } = params
     const singleData = blogData.find((data) => data.id === blogId)
     return singleData
   },
-  head: ({ loaderData }) => ({
+  head: ({ params, loaderData }) => ({
     meta: [
       {
         title: `${loaderData?.title} | Esha IT Consultancy`,
@@ -25,6 +27,57 @@ export const Route = createFileRoute('/blogs/$blogId')({
       {
         name: 'description',
         content: 'This is dummy description for blog details page.',
+      },
+
+      // Open Graph
+      { property: 'og:title', content: loaderData?.title },
+      {
+        property: 'og:description',
+        content: 'This is dummy description for blog details page.',
+      },
+      { property: 'og:image', content: loaderData?.image },
+      { property: 'og:type', content: 'article' },
+      {
+        property: 'og:url',
+        content: `${url}/blogs/${params.blogId}`,
+      },
+
+      // Twitter Card
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: loaderData?.title },
+      {
+        name: 'twitter:description',
+        content: 'This is dummy description for blog details page.',
+      },
+      { name: 'twitter:image', content: loaderData?.image },
+      { name: 'twitter:creator', content: loaderData?.name },
+      { name: 'twitter:site', content: '@EshaITConsultancy' },
+      {
+        name: 'twitter:url',
+        content: `${url}/blogs/${params.blogId}`,
+      },
+    ],
+    links: [
+      {
+        rel: 'canonical',
+        href: `${url}/blogs/${params.blogId}`,
+      },
+    ],
+    scripts: [
+      {
+        type: 'application/ld+json',
+        children: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: loaderData?.title,
+          description: 'This is dummy description for blog details page.',
+          image: loaderData?.image,
+          author: {
+            '@type': 'Person',
+            name: loaderData?.name,
+          },
+          datePublished: loaderData?.date,
+        }),
       },
     ],
   }),
