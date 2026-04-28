@@ -1,10 +1,11 @@
 // import Count from '../../common/count'
-import { useCountUp } from 'use-count-up'
+// import { useCountUp } from 'use-count-up'
+import pkg from 'use-count-up'
 import image1 from '/assets/img/work-process/work-process-1.png'
 import image2 from '/assets/img/work-process/work-process-2.png'
 import workBg from '/assets/img/work-process/work-process-bg.png'
 
-// const { useCountUp } = pkg
+const { useCountUp } = pkg
 
 export default function WorkArea() {
   const { value } = useCountUp({
