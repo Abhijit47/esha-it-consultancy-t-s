@@ -1,18 +1,20 @@
 import { TanStackDevtools } from '@tanstack/react-devtools'
 import {
   HeadContent,
-  Link,
   Scripts,
   createRootRouteWithContext,
 } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-// import Footer from '../components/Footer'
-// import Header from '../components/Header'
 
 import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
 
 import appCss from '../global.css?url'
 
+import CustomCursor from '#/components/layout/CustomCursor'
+import FooterOne from '#/components/layout/footers/footer-one'
+import HeaderOne from '#/components/layout/headers/header/header-one'
+import NotFound from '#/components/not-found'
+import ScrollToTop from '#/components/pages/common/scroll/scroll-to-top'
 import type { QueryClient } from '@tanstack/react-query'
 
 interface MyRouterContext {
@@ -33,8 +35,6 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
       },
       {
         title: 'Esha IT Consultancy',
-        description:
-          'Esha IT Consultancy is a leading provider of IT solutions and services, dedicated to helping businesses leverage technology for growth and success. With a team of experienced professionals, we offer a wide range of services including software development, cloud computing, cybersecurity, and IT consulting. Our mission is to deliver innovative and customized solutions that meet the unique needs of our clients, enabling them to stay competitive in the ever-evolving digital landscape.',
       },
     ],
     links: [
@@ -55,21 +55,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
     ],
   }),
   shellComponent: RootDocument,
-  // notFoundComponent: () => <div>Not Found</div>,
-  notFoundComponent(props) {
-    console.error('Route not found:', props)
-    return (
-      <div>
-        <p>
-          The page you are looking for does not exist. Please check the URL and
-          try again.
-        </p>
-        <Link to="/" className="btn-two">
-          Go Back
-        </Link>
-      </div>
-    )
-  },
+  notFoundComponent: NotFound,
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
@@ -80,9 +66,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body className="font-sans antialiased selection:bg-[rgba(79,184,178,0.24)]">
-        {/* <Header /> */}
+        <HeaderOne />
         {children}
-        {/* <Footer /> */}
+        <FooterOne />
+        <ScrollToTop />
+        <CustomCursor />
         <TanStackDevtools
           config={{
             position: 'bottom-right',

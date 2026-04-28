@@ -1,29 +1,16 @@
+import { Link } from '@tanstack/react-router'
+
 const MainMenu = () => {
   return (
     <>
       <ul>
-        <li className="menu-item-has-children">
-          <a href="#">
-            Home<i className="fas fa-angle-down"></i>
-          </a>
-          <ul className="sub-menu">
-            <li>
-              <a href="/">Home 01</a>
-            </li>
-            <li>
-              <a href="/home-two">Home 02</a>
-            </li>
-            <li>
-              <a href="/home-three">Home 03</a>
-            </li>
-            <li>
-              <a href="/home-four">Home 04</a>
-            </li>
-            <li>
-              <a href="/home-five">Home 05</a>
-            </li>
-          </ul>
+        <li>
+          <Link to="/">Home</Link>
         </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+
         <li className="menu-item-has-children">
           <a href="#">
             Pages <i className="fas fa-angle-down"></i>
@@ -94,26 +81,13 @@ const MainMenu = () => {
             </li>
           </ul>
         </li>
-        <li className="menu-item-has-children">
-          <a href="#">
-            Blog <i className="fas fa-angle-down"></i>
-          </a>
-          <ul className="sub-menu">
-            <li>
-              <a href="/blog">Blog Grid</a>
-            </li>
-            <li>
-              <a href="/blog-standard">Blog Standard</a>
-            </li>
-            <li>
-              <a href="/blog/ux-ui-designing-the-future-web-design">
-                Blog Details
-              </a>
-            </li>
-          </ul>
-        </li>
+
         <li>
-          <a href="/contact">Contact</a>
+          <Link to="/blogs">Blogs</Link>
+        </li>
+
+        <li>
+          <Link to="/contact">Contact</Link>
         </li>
       </ul>
     </>

@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-router'
 import { useState } from 'react'
 
 const ResponsiveMenu = () => {
@@ -14,28 +15,17 @@ const ResponsiveMenu = () => {
     activeIcons = (value: any) => (activeMenus == value ? 'mean-clicked' : ''),
     activeSubMenus = (value: any) =>
       value == activeMenus ? { display: 'block' } : { display: 'none' }
+
   return (
     <>
       <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
         <li className="menu-item-has-children">
-          <a href="#">Home</a>
-          <ul className="sub-menu" style={activeSubMenu('home')}>
-            <li>
-              <a href="/">Home 01</a>
-            </li>
-            <li>
-              <a href="/home-two">Home 02</a>
-            </li>
-            <li>
-              <a href="/home-three">Home 03</a>
-            </li>
-            <li>
-              <a href="/home-four">Home 04</a>
-            </li>
-            <li>
-              <a href="/home-five">Home 05</a>
-            </li>
-          </ul>
           <a
             className={`mean-expand ${activeIcon('home')}`}
             onClick={() => active('home')}
@@ -137,7 +127,7 @@ const ResponsiveMenu = () => {
           ></a>
         </li>
         <li>
-          <a href="/contact">Contact</a>
+          <Link to="/contact">Contact</Link>
         </li>
       </ul>
     </>

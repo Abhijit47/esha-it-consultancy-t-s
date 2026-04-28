@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 import MainMenu from '../header-menu'
 import MobileMenuPopup from '../mobile-menu/menu-area'
@@ -53,9 +54,9 @@ const HeaderOne = ({ variant }: { variant?: string }) => {
           <div className="header__area-menubar">
             <div className="header__area-menubar-left">
               <div className="header__area-menubar-left-logo">
-                <a href="/">
+                <Link to="/">
                   <img src={'/logo.jpeg'} alt="logo" height={100} width={100} />
-                </a>
+                </Link>
               </div>
             </div>
             <div className="header__area-menubar-center">
@@ -86,9 +87,9 @@ const HeaderOne = ({ variant }: { variant?: string }) => {
                   </div>
                 </div>
                 <div className="header__area-menubar-right-box-btn">
-                  <a className="btn-one" href="/request-quote">
+                  <Link className="btn-one" to="/request-quote">
                     Get Quote<i className="fas fa-arrow-right"></i>
-                  </a>
+                  </Link>
                 </div>
                 <div className="header__area-menubar-right-responsive-menu menu__bar">
                   <i

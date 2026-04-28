@@ -1,7 +1,6 @@
 import Social from '@/components/data/social'
 import { Link } from '@tanstack/react-router'
 import type { Dispatch, SetStateAction } from 'react'
-import logo2 from '/assets/img/logo-2.png'
 
 const SideBar = ({
   isOpen,
@@ -20,7 +19,13 @@ const SideBar = ({
         </div>
         <div className="header__area-menubar-right-sidebar-popup-logo">
           <Link to="/">
-            <img className="logo_one" src={logo2} alt="logo" />
+            <img
+              className="logo_one"
+              src={'/logo.jpeg'}
+              alt="logo"
+              width={80}
+              height={80}
+            />
           </Link>
         </div>
         <p>

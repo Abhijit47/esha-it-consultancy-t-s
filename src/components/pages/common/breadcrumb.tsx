@@ -7,7 +7,7 @@ const BreadCrumb = ({
   innerTitle,
 }: {
   title: string
-  innerTitle: string
+  innerTitle?: string
 }) => {
   return (
     <div className="page__banner">
