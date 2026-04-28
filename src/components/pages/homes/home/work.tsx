@@ -1,6 +1,7 @@
 // import Count from '../../common/count'
-import { useCountUp } from 'use-count-up'
+import { CountUp } from 'use-count-up'
 // import pkg from 'use-count-up'
+import { ClientOnly } from '@tanstack/react-router'
 import image1 from '/assets/img/work-process/work-process-1.png'
 import image2 from '/assets/img/work-process/work-process-2.png'
 import workBg from '/assets/img/work-process/work-process-bg.png'
@@ -8,11 +9,11 @@ import workBg from '/assets/img/work-process/work-process-bg.png'
 // const { useCountUp } = pkg
 
 export default function WorkArea() {
-  const { value } = useCountUp({
-    isCounting: true,
-    end: 10,
-    duration: 3.2,
-  })
+  // const { value } = useCountUp({
+  //   isCounting: true,
+  //   end: 10,
+  //   duration: 3.2,
+  // })
 
   return (
     <div
@@ -76,7 +77,11 @@ export default function WorkArea() {
             <div className="work-process-area__one-right-counter-img">
               <div className="img-counter">
                 <div className="counter-only">
-                  <h2 className="counter">{value}</h2>
+                  <h2 className="counter">
+                    <ClientOnly fallback={<span>0</span>}>
+                      <CountUp isCounting end={10} duration={3.2} />
+                    </ClientOnly>
+                  </h2>
                   <h2>+</h2>
                 </div>
                 <span>years of experiences</span>
