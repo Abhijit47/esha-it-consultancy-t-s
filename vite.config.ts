@@ -1,8 +1,8 @@
 import { devtools } from '@tanstack/devtools-vite'
 import { defineConfig } from 'vite'
 
+import netlify from '@netlify/vite-plugin-tanstack-start' // ← add this
 import { tanstackStart } from '@tanstack/react-start/plugin/vite'
-
 import viteReact, { type Options } from '@vitejs/plugin-react'
 
 const config = defineConfig({
@@ -10,6 +10,7 @@ const config = defineConfig({
   plugins: [
     devtools(),
     tanstackStart(),
+    netlify(), // ← add this (anywhere in the array is fine)
     viteReact({
       babel: {
         plugins: ['babel-plugin-react-compiler'],
