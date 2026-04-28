@@ -1,0 +1,77 @@
+import portfolioData from '@/components/data/portfolio-data'
+import { Autoplay, EffectFade } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+const Portfolio = () => {
+  const slideControl = {
+    spaceBetween: 35,
+    slidesPerView: 3,
+    centeredSlides: true,
+    speed: 2000,
+    loop: true,
+    autoplay: {
+      delay: 4500,
+      reverseDirection: false,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      575: {
+        slidesPerView: 1,
+      },
+      992: {
+        slidesPerView: 3,
+      },
+      1200: {
+        slidesPerView: 3,
+      },
+    },
+  }
+  return (
+    <div className="portfolio__one section-padding">
+      <div className="container">
+        <div className="row gy-4 align-items-end justify-content-between mb-5">
+          <div className="col-xl-6 col-lg-7 col-md-9 col-sm-10">
+            <div className="portfolio__one-content-left">
+              <span className="subtitle-one">Tech Portfolio</span>
+              <h2>Case Studies in Ingenious IT Portfolio</h2>
+            </div>
+          </div>
+          <div className="col-xl-3 col-lg-4">
+            <div className="portfolio__one-content-right text-lg-end">
+              <a href="/portfolio/3-columns" className="btn-one">
+                All Portfolio<i className="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container custom__container">
+        <Swiper
+          modules={[EffectFade, Autoplay]}
+          {...slideControl}
+          className="py-5"
+        >
+          {portfolioData?.map((data, id) => (
+            <SwiperSlide
+              key={id}
+              className="portfolio__one-single-portfolio single-portfolio"
+            >
+              <img src={data.image} alt="image" />
+              <div className="portfolio__one-single-portfolio-content">
+                <h4>
+                  <a href={`/portfolio/${data.id}`}>{data.title}</a>
+                </h4>
+                <span>{data.subtitle}</span>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </div>
+  )
+}
+
+export default Portfolio
