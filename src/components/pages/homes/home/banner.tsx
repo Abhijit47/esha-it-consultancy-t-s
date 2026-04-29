@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-router'
 import banner1 from '/assets/img/banner/banner-right-img.jpg'
 import bannerShape from '/assets/img/shape/banner-shape.png'
 
@@ -18,18 +19,25 @@ const BannerOne = () => {
           <div className="row align-items-center gy-4 justify-content-center">
             <div className="col-xl-6 col-lg-6">
               <div className="banner__one-content">
-                <span className="subtitle-one">Digital Growth</span>
+                <span className="subtitle-one">Dubai's Premier IT Partner</span>
                 <h2>
-                  Blueprints for Digital <span>Excellence</span>
+                  Powering Your <span>Digital Future</span>
                 </h2>
                 <p>
-                  Our team about exploring new possibilities and embracing
-                  emerging trends to deliver transformative IT solutions
+                  ESHA IT Consultancy Services delivers world-class technology
+                  solutions to businesses across the UAE, transforming
+                  challenges into competitive advantages.
                 </p>
-                <a href="/services" className="btn-two">
-                  Find Solutions
-                  <i className="fas fa-arrow-right"></i>
-                </a>
+                <div className="d-flex align-items-center gap-2">
+                  <Link to="/contact" className="btn-two">
+                    Explore services
+                    <i className="fas fa-arrow-right"></i>
+                  </Link>
+                  <Link to="/contact" className="btn-one">
+                    Free Consultation
+                    <i className="fas fa-arrow-right"></i>
+                  </Link>
+                </div>
               </div>
             </div>
             <div className="col-xl-5 offset-xl-1 col-lg-6 col-md-9">

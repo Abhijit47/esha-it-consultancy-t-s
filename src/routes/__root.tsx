@@ -8,6 +8,7 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 
 import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
 
+import bootstrapJS from 'bootstrap/dist/js/bootstrap.min.js?url'
 import appCss from '../global.css?url'
 
 import CustomCursor from '#/components/layout/CustomCursor'
@@ -50,7 +51,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
     ],
     scripts: [
       {
-        src: 'bootstrap/dist/js/bootstrap.min.js',
+        src: bootstrapJS,
       },
     ],
   }),

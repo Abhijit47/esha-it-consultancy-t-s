@@ -2,7 +2,6 @@ import { Link } from '@tanstack/react-router'
 
 import servicesData from '@/components/data/services-data'
 import Social from '@/components/data/social'
-import logo from '/assets/img/logo-2.png'
 import footerBg from '/assets/img/shape/footer-two-bg.png'
 import ctaBg from '/assets/img/subscribe/subscribe-one-shape-1.png'
 
@@ -17,7 +16,11 @@ const FooterOne = () => {
           >
             <div className="col-xl-7 col-lg-8">
               <div className="subscribe__one-title">
-                <h3>Subscribe Our newsletter</h3>
+                <h3>Ready to Transform Your Business?</h3>
+                <p className={'text-light'}>
+                  Let's have a conversation about your technology challenges. No
+                  obligations — just expert advice.
+                </p>
               </div>
               <form action="#" className="subscribe__one-form">
                 <input type="email" placeholder="Enter Your Email" />
@@ -37,7 +40,12 @@ const FooterOne = () => {
               <div className="footer__two-widget">
                 <div className="footer__two-widget-about">
                   <Link to="/">
-                    <img src={logo} alt="image" />
+                    <img
+                      src={'/logo.jpeg'}
+                      alt="image"
+                      width={80}
+                      height={80}
+                    />
                   </Link>
                   <p>Financial planners help people to gain knowledge about</p>
                   <div className="footer__two-widget-about-location">

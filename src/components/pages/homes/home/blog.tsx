@@ -1,4 +1,5 @@
 import blogData from '@/components/data/blog-data'
+import { Link } from '@tanstack/react-router'
 
 const Blog = () => {
   return (
@@ -17,9 +18,9 @@ const Blog = () => {
             <div className="col-xl-4 col-lg-6" key={id}>
               <div className="blog__one-single-blog">
                 <div className="blog__one-single-blog-image">
-                  <a href={`/blog/${data.id}`}>
+                  <Link to={'/blogs/$blogId'} params={{ blogId: data.id }}>
                     <img src={data.image} alt="blog" />
-                  </a>
+                  </Link>
                 </div>
                 <div className="blog__one-single-blog-date">
                   <span className="date">{data.date}</span>
@@ -35,12 +36,24 @@ const Blog = () => {
                       {data.comment})
                     </span>
                   </div>
-                  <a className="blog-heading" href={`/blog/${data.id}`}>
+                  {/* <a className="blog-heading" href={`/blog/${data.id}`}> */}
+                  <Link
+                    className="blog-heading"
+                    to={'/blogs/$blogId'}
+                    params={{ blogId: data.id }}
+                  >
                     {data.title}
-                  </a>
-                  <a className="btn-three" href={`/blog/${data.id}`}>
+                  </Link>
+                  {/* </a> */}
+                  {/* <a className="btn-three" href={`/blog/${data.id}`}> */}
+                  <Link
+                    className="btn-three"
+                    to={'/blogs/$blogId'}
+                    params={{ blogId: data.id }}
+                  >
                     Read More<i className="fas fa-angle-right"></i>
-                  </a>
+                  </Link>
+                  {/* </a> */}
                 </div>
               </div>
             </div>

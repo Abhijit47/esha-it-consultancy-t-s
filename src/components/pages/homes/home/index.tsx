@@ -1,13 +1,17 @@
 // import SEO from '@/components/data/seo'
-import About from './about'
+import ContactSection from '#/components/contact/contact-section'
+import Services from '#/components/Services'
+// import About from './about'
 import BannerOne from './banner'
 import Blog from './blog'
-import ChooseUs from './choose-us'
+import BrandLogos from './brand-logos'
+// import ChooseUs from './choose-us'
 import Features from './features'
-import Portfolio from './portfolio'
-import Pricing from './pricing'
+// import Portfolio from './portfolio'
+// import Pricing from './pricing'
 import Testimonial from './testimonial'
-import WorkArea from './work'
+import WhyChooseUs from './why-choose-us'
+// import WorkArea from './work'
 
 const HomeOne = () => {
   // function handleMouseEnterTitle() {
@@ -25,14 +29,18 @@ const HomeOne = () => {
       {/* <SEO pageTitle="Technology" /> */}
       {/* <HeaderOne /> */}
       <BannerOne />
-      <About />
-      <ChooseUs />
+      <BrandLogos />
       <Features />
+      <Services />
+      <WhyChooseUs />
+      {/* <About />
+      <ChooseUs />
       <Portfolio />
       <Pricing />
-      <WorkArea />
+      <WorkArea /> */}
       <Testimonial />
       <Blog />
+      <ContactSection />
       {/* <FooterOne /> */}
       {/* <ScrollToTop /> */}
       {/* <CustomCursor /> */}

@@ -212,6 +212,16 @@ input[type='time'],
 input[type='datetime'],
 input[type='datetime-local'],
 input[type='color'],
+select,
+select option {
+  color: var(--body-color);
+  border-radius: 5px;
+  width: 100%;
+  height: 60px;
+  border: 1px solid var(--color-4);
+  padding: 0 15px;
+  background: var(--bg-white);
+}
 textarea {
   color: var(--body-color);
   border-radius: 5px;
@@ -237,6 +247,16 @@ input[type='time']:focus,
 input[type='datetime']:focus,
 input[type='datetime-local']:focus,
 input[type='color']:focus,
+select:focus,
+select option {
+  color: var(--body-color);
+  border-radius: 5px;
+  width: 100%;
+  height: 60px;
+  border: 1px solid var(--color-4);
+  padding: 0 15px;
+  background: var(--bg-white);
+}
 textarea:focus {
   color: var(--text-heading-color);
   outline: none;
@@ -1070,7 +1090,7 @@ p {
   --primary-color-2: #f8e559;
   --primary-color-3: #406aff;
   --bg-heading-color: #051634;
-  --text-heading-color: #8B6914;
+  --text-heading-color: #8b6914;
   /* --text-heading-color: #051634; */
   --btn-heading-color: #131313;
   --body-color: #343434;

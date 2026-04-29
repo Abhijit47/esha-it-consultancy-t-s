@@ -1,13 +1,17 @@
+import Spinner from '#/components/Spinner'
+import { ClientOnly } from '@tanstack/react-router'
+
 const Pricing = () => {
   return (
-    <>
-      <div className="pricing-plan__one section-padding">
-        <div className="container">
-          <div className="row justify-content-center text-center">
-            <div className="col-xl-6 col-lg-7 col-md-8">
-              <div className="pricing-plan__one-title">
-                <span className="subtitle-one">Flexible Plans</span>
-                <h2 className="mb-40">Pricing Made Simple</h2>
+    <div className="pricing-plan__one section-padding">
+      <div className="container">
+        <div className="row justify-content-center text-center">
+          <div className="col-xl-6 col-lg-7 col-md-8">
+            <div className="pricing-plan__one-title">
+              <span className="subtitle-one">Flexible Plans</span>
+              <h2 className="mb-40">Pricing Made Simple</h2>
+
+              <ClientOnly fallback={<Spinner />}>
                 <ul
                   className="nav nav-pills mb-65 justify-content-center"
                   id="pills-tab"
@@ -42,9 +46,11 @@ const Pricing = () => {
                     </button>
                   </li>
                 </ul>
-              </div>
+              </ClientOnly>
             </div>
           </div>
+        </div>
+        <ClientOnly fallback={<Spinner />}>
           <div className="pricing-plans tab-content">
             <div
               className="row justify-content-center gy-4 tab-pane fade show active"
@@ -263,9 +269,9 @@ const Pricing = () => {
               </div>
             </div>
           </div>
-        </div>
+        </ClientOnly>
       </div>
-    </>
+    </div>
   )
 }
 

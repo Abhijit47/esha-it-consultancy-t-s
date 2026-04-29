@@ -28,19 +28,26 @@ const HeaderOne = ({ variant }: { variant?: string }) => {
           <div className="row">
             <div className="col-xl-7 col-md-7">
               <div className="top__bar-left">
-                <a href="tel:(629)555-0129">
-                  <i className="fas fa-phone-alt"></i>(629) 555-0129
+                <a href="tel:0526063287" target="_blank">
+                  <i className="fas fa-phone-alt"></i>0526063287
                 </a>
-                <a href="mailto:info@example.com">
-                  <i className="fas fa-envelope"></i>info@example.com
+                <a
+                  href="mailto:eshaitconsultancyservices@gmail.com"
+                  target="_blank"
+                >
+                  <i className="fas fa-envelope"></i>
+                  eshaitconsultancyservices@gmail.com
                 </a>
               </div>
             </div>
             <div className="col-xl-5 col-md-5">
               <div className="top__bar-right">
-                <a href="https://www.google.com/maps">
-                  <i className="fas fa-map-marker-alt"></i>6391 Elgin St.
-                  Celina, 10299
+                <a
+                  href="https://maps.app.goo.gl/ZqrUPxNSqhLxCCfc9"
+                  target="_blank"
+                >
+                  <i className="fas fa-map-marker-alt"></i>26th Floor, Amber Gem
+                  Tower, Ajman
                 </a>
               </div>
             </div>
