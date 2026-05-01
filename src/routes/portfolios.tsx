@@ -1,7 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
-// import portfolioData from '#/components/data/portfolio-data'
+
 import BreadCrumb from '#/components/pages/common/breadcrumb'
-// import { useState } from 'react'
 
 const projects = [
   {
@@ -78,20 +77,117 @@ const projects = [
   },
 ]
 
-export const Route = createFileRoute('/(portfolio)/3-columns')({
+const servedIndustries = [
+  {
+    id: crypto.randomUUID(),
+    work: 'Logistics & Supply Chain',
+    icon: <i className="fa fa-cart-flatbed fa-duotone"></i>,
+  },
+  {
+    id: crypto.randomUUID(),
+    work: 'Finance & Banking',
+    icon: <i className="fa fa-building-columns fa-duotone"></i>,
+  },
+  {
+    id: crypto.randomUUID(),
+    work: 'Retail & E-commerce',
+    icon: <i className="fa fa-shop fa-duotone"></i>,
+  },
+  {
+    id: crypto.randomUUID(),
+    work: 'Healthcare',
+    icon: <i className="fa fa-hospital fa-duotone"></i>,
+  },
+  {
+    id: crypto.randomUUID(),
+    work: 'Manufacturing',
+    icon: <i className="fa fa-industry fa-duotone"></i>,
+  },
+  {
+    id: crypto.randomUUID(),
+    work: 'Corporate Enterprises',
+    icon: <i className="fa fa-building-shield fa-duotone"></i>,
+  },
+]
+
+export const Route = createFileRoute('/portfolios')({
   component: RouteComponent,
 })
 
 function RouteComponent() {
   return (
     <main>
-      <BreadCrumb title="03 Columns" innerTitle="Portfolio Grid" />
+      <BreadCrumb title={'Portfolios'} innerTitle="Featured Projects" />
+
+      <div className="services__one mt-50">
+        <div className="container">
+          <div className="row justify-content-center text-center">
+            <div className="col-xl-7 col-lg-7 col-md-9 services__one-title">
+              <span className="subtitle-one">Featured Projects</span>
+              <h2>Our Work</h2>
+              <p className={'mb-3 lh-base'}>
+                At ESHA IT Consultancy Services, every project is a reflection
+                of precision, innovation, and strategic execution. Our portfolio
+                showcases how we transform complex business challenges into
+                scalable, secure, and high-performance solutions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
       <ThreeColumns />
+
+      <div className="services__one mb-120">
+        <div className="container">
+          <div className="row justify-content-center text-center">
+            <div className="col-xl-7 col-lg-7 col-md-9 services__one-title">
+              <span className="subtitle-one">Industries We Serve</span>
+              <h2>Industries We Work With</h2>
+              <p className={'mb-3 lh-base'}>
+                At ESHA IT Consultancy Services, every project is a reflection
+                of precision, innovation, and strategic execution. Our portfolio
+                showcases how we transform complex business challenges into
+                scalable, secure, and high-performance solutions.
+              </p>
+            </div>
+          </div>
+
+          <div className="row align-items-center justify-content-center">
+            {servedIndustries.map((industry) => (
+              <div className="col-md-4 col-sm-6" key={industry.id}>
+                <div className="single-service">
+                  <div className="services__one-single-service-icon">
+                    {industry.icon}
+                  </div>
+                  <div className="services__one-single-service-content">
+                    <h4>{industry.work}</h4>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="services__one mb-50">
+        <div className="container">
+          <div className="row justify-content-center text-center">
+            <div className="col-xl-7 col-lg-7 col-md-9 services__one-title">
+              <span className="subtitle-one">Our Approach</span>
+              <h2>Our Approach</h2>
+              <p className={'mb-3 lh-base'}>
+                Every project begins with understanding — your business, your
+                challenges, and your vision. We then design, implement, and
+                optimize solutions with a focus on performance, security, and
+                long-term scalability.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   )
 }
-
-// const showPortfolioItem = 5
 
 const ThreeColumns = () => {
   // const portfolioItem = portfolioData
@@ -122,7 +218,7 @@ const ThreeColumns = () => {
                     </ul>
                   </div>
                   <div className="portfolio__two-single-item-content-right">
-                    <a href={`/portfolio/${data.id}`} title="View Details">
+                    <a href={`#`} title="View Details">
                       <i className="fas fa-arrow-right"></i>
                     </a>
                   </div>
@@ -130,37 +226,7 @@ const ThreeColumns = () => {
               </div>
             </div>
           ))}
-
-          {/* {portfolioItem?.slice(0, next)?.map((data, id) => (
-            <div className="col-xl-4 col-lg-4 col-md-6" key={id}>
-              <div className="portfolio__two-single-item">
-                <div className="portfolio__two-single-item-img-wrapper">
-                  <img src={data.image} alt="image" />
-                </div>
-                <div className="portfolio__two-single-item-content">
-                  <div className="portfolio__two-single-item-content-left">
-                    <h3>{data.title}</h3>
-                    <p>{data.subtitle}</p>
-                  </div>
-                  <div className="portfolio__two-single-item-content-right">
-                    <a href={`/portfolio/${data.id}`} title="View Details">
-                      <i className="fas fa-arrow-right"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))} */}
         </div>
-        {/* {next < portfolioData.length && (
-          <div className="row mt-70">
-            <div className="col-xl-12 t-center">
-              <button onClick={handleLoadData} className="btn-one">
-                Load More
-              </button>
-            </div>
-          </div>
-        )} */}
       </div>
     </div>
   )

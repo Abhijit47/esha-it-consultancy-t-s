@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as RequestQuoteRouteImport } from './routes/request-quote'
+import { Route as PortfoliosRouteImport } from './routes/portfolios'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -32,6 +33,11 @@ import { Route as pagesFaqRouteImport } from './routes/(pages)/faq'
 const RequestQuoteRoute = RequestQuoteRouteImport.update({
   id: '/request-quote',
   path: '/request-quote',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfoliosRoute = PortfoliosRouteImport.update({
+  id: '/portfolios',
+  path: '/portfolios',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -129,6 +135,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/portfolios': typeof PortfoliosRoute
   '/request-quote': typeof RequestQuoteRoute
   '/faq': typeof pagesFaqRoute
   '/pricing-plan': typeof pagesPricingPlanRoute
@@ -150,6 +157,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/portfolios': typeof PortfoliosRoute
   '/request-quote': typeof RequestQuoteRoute
   '/faq': typeof pagesFaqRoute
   '/pricing-plan': typeof pagesPricingPlanRoute
@@ -172,6 +180,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/portfolios': typeof PortfoliosRoute
   '/request-quote': typeof RequestQuoteRoute
   '/(pages)/faq': typeof pagesFaqRoute
   '/(pages)/pricing-plan': typeof pagesPricingPlanRoute
@@ -195,6 +204,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/portfolios'
     | '/request-quote'
     | '/faq'
     | '/pricing-plan'
@@ -216,6 +226,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/portfolios'
     | '/request-quote'
     | '/faq'
     | '/pricing-plan'
@@ -237,6 +248,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/portfolios'
     | '/request-quote'
     | '/(pages)/faq'
     | '/(pages)/pricing-plan'
@@ -259,6 +271,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  PortfoliosRoute: typeof PortfoliosRoute
   RequestQuoteRoute: typeof RequestQuoteRoute
   pagesFaqRoute: typeof pagesFaqRoute
   pagesPricingPlanRoute: typeof pagesPricingPlanRoute
@@ -284,6 +297,13 @@ declare module '@tanstack/react-router' {
       path: '/request-quote'
       fullPath: '/request-quote'
       preLoaderRoute: typeof RequestQuoteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolios': {
+      id: '/portfolios'
+      path: '/portfolios'
+      fullPath: '/portfolios'
+      preLoaderRoute: typeof PortfoliosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -419,6 +439,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  PortfoliosRoute: PortfoliosRoute,
   RequestQuoteRoute: RequestQuoteRoute,
   pagesFaqRoute: pagesFaqRoute,
   pagesPricingPlanRoute: pagesPricingPlanRoute,
