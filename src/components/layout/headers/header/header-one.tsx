@@ -3,14 +3,14 @@ import { useEffect, useState } from 'react'
 import MainMenu from '../header-menu'
 import MobileMenuPopup from '../mobile-menu/menu-area'
 import SideBar from '../offcanvas'
-import Search from '../search'
+// import Search from '../search'
 // import logo1 from '/assets/img/logo-1.png'
 // import logo2 from '/assets/img/logo-2.png'
 
 const HeaderOne = ({ variant }: { variant?: string }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [menuSidebar, setMenuSidebar] = useState(false)
-  const [search, setSearch] = useState(false)
+  // const [search, setSearch] = useState(false)
   const [isSticky, setIsSticky] = useState(false)
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -73,7 +73,7 @@ const HeaderOne = ({ variant }: { variant?: string }) => {
             </div>
             <div className="header__area-menubar-right">
               <div className="header__area-menubar-right-box">
-                <div className="header__area-menubar-right-box-search">
+                {/* <div className="header__area-menubar-right-box-search">
                   <div className="search">
                     <span
                       className="header__area-menubar-right-box-search-icon open"
@@ -82,7 +82,7 @@ const HeaderOne = ({ variant }: { variant?: string }) => {
                       <i className="flaticon-loupe"></i>
                     </span>
                   </div>
-                </div>
+                </div> */}
                 <div className="header__area-menubar-right-box-sidebar">
                   <div
                     className="header__area-menubar-right-box-sidebar-popup-icon"
@@ -115,7 +115,7 @@ const HeaderOne = ({ variant }: { variant?: string }) => {
         setIsOpen={setMenuSidebar}
         popupLogo={'/logo.jpeg'}
       />
-      <Search isOpen={search} setIsOpen={setSearch} />
+      {/* <Search isOpen={search} setIsOpen={setSearch} /> */}
     </>
   )
 }

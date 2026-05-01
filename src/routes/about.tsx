@@ -76,27 +76,41 @@ const AboutMain = () => {
                 <span className="subtitle-one">About us</span>
                 <h2>Transform Business to Technology</h2>
                 <p>
-                  IT Technology is a broad category encompassing all aspec
-                  information technology and the application of technology in
-                  various industries. It includes areas such as software
-                  development
+                  At ESHA IT Consultancy Services, we redefine how businesses
+                  experience technology. Based in Dubai, we deliver
+                  sophisticated, future-ready IT solutions designed not just to
+                  support your operations — but to elevate them.
+                </p>
+                <p>
+                  We operate at the intersection of innovation, strategy, and
+                  precision, helping organizations transform complex
+                  technological challenges into seamless, scalable systems that
+                  drive measurable growth.
                 </p>
                 <div className="about__one-content-service">
                   <div className="service">
                     <i className="far fa-check-circle"></i>
-                    <span>Data Management Experts</span>
+                    <span>Enterprise-Grade Cybersecurity</span>
                   </div>
                   <div className="service">
                     <i className="far fa-check-circle"></i>
-                    <span>Mobile App Developments</span>
+                    <span>Custom Software & Application Development</span>
                   </div>
                   <div className="service">
                     <i className="far fa-check-circle"></i>
-                    <span>IT Infrastructure Solutions</span>
+                    <span>ERP & Business Process Automation</span>
                   </div>
                   <div className="service">
                     <i className="far fa-check-circle"></i>
-                    <span>Data Analytics Consulting</span>
+                    <span>Intelligent AI & Data-Driven Systems</span>
+                  </div>
+                  <div className="service">
+                    <i className="far fa-check-circle"></i>
+                    <span>Digital Transformation & IT Strategy</span>
+                  </div>
+                  <div className="service">
+                    <i className="far fa-check-circle"></i>
+                    <span>Managed IT Services & Ongoing Support</span>
                   </div>
                 </div>
                 <Link to="/about" className="btn-one">

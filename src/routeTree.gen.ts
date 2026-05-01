@@ -13,9 +13,21 @@ import { Route as RequestQuoteRouteImport } from './routes/request-quote'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as TeamIndexRouteImport } from './routes/team/index'
+import { Route as ServicesIndexRouteImport } from './routes/services/index'
 import { Route as BlogsIndexRouteImport } from './routes/blogs/index'
+import { Route as TeamTeamTwoRouteImport } from './routes/team/team-two'
+import { Route as ServicesServicesTwoRouteImport } from './routes/services/services-two'
+import { Route as ServicesServiceIdRouteImport } from './routes/services/$serviceId'
 import { Route as DemoTanstackQueryRouteImport } from './routes/demo/tanstack-query'
 import { Route as BlogsBlogIdRouteImport } from './routes/blogs/$blogId'
+import { Route as portfolio4ColumnsRouteImport } from './routes/(portfolio)/4-columns'
+import { Route as portfolio3ColumnsRouteImport } from './routes/(portfolio)/3-columns'
+import { Route as portfolio2ColumnsRouteImport } from './routes/(portfolio)/2-columns'
+import { Route as portfolioPortfolioIdRouteImport } from './routes/(portfolio)/$portfolioId'
+import { Route as pagesTestimonialRouteImport } from './routes/(pages)/testimonial'
+import { Route as pagesPricingPlanRouteImport } from './routes/(pages)/pricing-plan'
+import { Route as pagesFaqRouteImport } from './routes/(pages)/faq'
 
 const RequestQuoteRoute = RequestQuoteRouteImport.update({
   id: '/request-quote',
@@ -37,9 +49,34 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TeamIndexRoute = TeamIndexRouteImport.update({
+  id: '/team/',
+  path: '/team/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogsIndexRoute = BlogsIndexRouteImport.update({
   id: '/blogs/',
   path: '/blogs/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamTeamTwoRoute = TeamTeamTwoRouteImport.update({
+  id: '/team/team-two',
+  path: '/team/team-two',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesServicesTwoRoute = ServicesServicesTwoRouteImport.update({
+  id: '/services/services-two',
+  path: '/services/services-two',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesServiceIdRoute = ServicesServiceIdRouteImport.update({
+  id: '/services/$serviceId',
+  path: '/services/$serviceId',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DemoTanstackQueryRoute = DemoTanstackQueryRouteImport.update({
@@ -52,24 +89,83 @@ const BlogsBlogIdRoute = BlogsBlogIdRouteImport.update({
   path: '/blogs/$blogId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const portfolio4ColumnsRoute = portfolio4ColumnsRouteImport.update({
+  id: '/(portfolio)/4-columns',
+  path: '/4-columns',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const portfolio3ColumnsRoute = portfolio3ColumnsRouteImport.update({
+  id: '/(portfolio)/3-columns',
+  path: '/3-columns',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const portfolio2ColumnsRoute = portfolio2ColumnsRouteImport.update({
+  id: '/(portfolio)/2-columns',
+  path: '/2-columns',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const portfolioPortfolioIdRoute = portfolioPortfolioIdRouteImport.update({
+  id: '/(portfolio)/$portfolioId',
+  path: '/$portfolioId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const pagesTestimonialRoute = pagesTestimonialRouteImport.update({
+  id: '/(pages)/testimonial',
+  path: '/testimonial',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const pagesPricingPlanRoute = pagesPricingPlanRouteImport.update({
+  id: '/(pages)/pricing-plan',
+  path: '/pricing-plan',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const pagesFaqRoute = pagesFaqRouteImport.update({
+  id: '/(pages)/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/request-quote': typeof RequestQuoteRoute
+  '/faq': typeof pagesFaqRoute
+  '/pricing-plan': typeof pagesPricingPlanRoute
+  '/testimonial': typeof pagesTestimonialRoute
+  '/$portfolioId': typeof portfolioPortfolioIdRoute
+  '/2-columns': typeof portfolio2ColumnsRoute
+  '/3-columns': typeof portfolio3ColumnsRoute
+  '/4-columns': typeof portfolio4ColumnsRoute
   '/blogs/$blogId': typeof BlogsBlogIdRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
+  '/services/$serviceId': typeof ServicesServiceIdRoute
+  '/services/services-two': typeof ServicesServicesTwoRoute
+  '/team/team-two': typeof TeamTeamTwoRoute
   '/blogs/': typeof BlogsIndexRoute
+  '/services/': typeof ServicesIndexRoute
+  '/team/': typeof TeamIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/request-quote': typeof RequestQuoteRoute
+  '/faq': typeof pagesFaqRoute
+  '/pricing-plan': typeof pagesPricingPlanRoute
+  '/testimonial': typeof pagesTestimonialRoute
+  '/$portfolioId': typeof portfolioPortfolioIdRoute
+  '/2-columns': typeof portfolio2ColumnsRoute
+  '/3-columns': typeof portfolio3ColumnsRoute
+  '/4-columns': typeof portfolio4ColumnsRoute
   '/blogs/$blogId': typeof BlogsBlogIdRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
+  '/services/$serviceId': typeof ServicesServiceIdRoute
+  '/services/services-two': typeof ServicesServicesTwoRoute
+  '/team/team-two': typeof TeamTeamTwoRoute
   '/blogs': typeof BlogsIndexRoute
+  '/services': typeof ServicesIndexRoute
+  '/team': typeof TeamIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -77,9 +173,21 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/request-quote': typeof RequestQuoteRoute
+  '/(pages)/faq': typeof pagesFaqRoute
+  '/(pages)/pricing-plan': typeof pagesPricingPlanRoute
+  '/(pages)/testimonial': typeof pagesTestimonialRoute
+  '/(portfolio)/$portfolioId': typeof portfolioPortfolioIdRoute
+  '/(portfolio)/2-columns': typeof portfolio2ColumnsRoute
+  '/(portfolio)/3-columns': typeof portfolio3ColumnsRoute
+  '/(portfolio)/4-columns': typeof portfolio4ColumnsRoute
   '/blogs/$blogId': typeof BlogsBlogIdRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
+  '/services/$serviceId': typeof ServicesServiceIdRoute
+  '/services/services-two': typeof ServicesServicesTwoRoute
+  '/team/team-two': typeof TeamTeamTwoRoute
   '/blogs/': typeof BlogsIndexRoute
+  '/services/': typeof ServicesIndexRoute
+  '/team/': typeof TeamIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -88,27 +196,63 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/request-quote'
+    | '/faq'
+    | '/pricing-plan'
+    | '/testimonial'
+    | '/$portfolioId'
+    | '/2-columns'
+    | '/3-columns'
+    | '/4-columns'
     | '/blogs/$blogId'
     | '/demo/tanstack-query'
+    | '/services/$serviceId'
+    | '/services/services-two'
+    | '/team/team-two'
     | '/blogs/'
+    | '/services/'
+    | '/team/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/contact'
     | '/request-quote'
+    | '/faq'
+    | '/pricing-plan'
+    | '/testimonial'
+    | '/$portfolioId'
+    | '/2-columns'
+    | '/3-columns'
+    | '/4-columns'
     | '/blogs/$blogId'
     | '/demo/tanstack-query'
+    | '/services/$serviceId'
+    | '/services/services-two'
+    | '/team/team-two'
     | '/blogs'
+    | '/services'
+    | '/team'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/contact'
     | '/request-quote'
+    | '/(pages)/faq'
+    | '/(pages)/pricing-plan'
+    | '/(pages)/testimonial'
+    | '/(portfolio)/$portfolioId'
+    | '/(portfolio)/2-columns'
+    | '/(portfolio)/3-columns'
+    | '/(portfolio)/4-columns'
     | '/blogs/$blogId'
     | '/demo/tanstack-query'
+    | '/services/$serviceId'
+    | '/services/services-two'
+    | '/team/team-two'
     | '/blogs/'
+    | '/services/'
+    | '/team/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -116,9 +260,21 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   RequestQuoteRoute: typeof RequestQuoteRoute
+  pagesFaqRoute: typeof pagesFaqRoute
+  pagesPricingPlanRoute: typeof pagesPricingPlanRoute
+  pagesTestimonialRoute: typeof pagesTestimonialRoute
+  portfolioPortfolioIdRoute: typeof portfolioPortfolioIdRoute
+  portfolio2ColumnsRoute: typeof portfolio2ColumnsRoute
+  portfolio3ColumnsRoute: typeof portfolio3ColumnsRoute
+  portfolio4ColumnsRoute: typeof portfolio4ColumnsRoute
   BlogsBlogIdRoute: typeof BlogsBlogIdRoute
   DemoTanstackQueryRoute: typeof DemoTanstackQueryRoute
+  ServicesServiceIdRoute: typeof ServicesServiceIdRoute
+  ServicesServicesTwoRoute: typeof ServicesServicesTwoRoute
+  TeamTeamTwoRoute: typeof TeamTeamTwoRoute
   BlogsIndexRoute: typeof BlogsIndexRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
+  TeamIndexRoute: typeof TeamIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -151,11 +307,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/team/': {
+      id: '/team/'
+      path: '/team'
+      fullPath: '/team/'
+      preLoaderRoute: typeof TeamIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blogs/': {
       id: '/blogs/'
       path: '/blogs'
       fullPath: '/blogs/'
       preLoaderRoute: typeof BlogsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team/team-two': {
+      id: '/team/team-two'
+      path: '/team/team-two'
+      fullPath: '/team/team-two'
+      preLoaderRoute: typeof TeamTeamTwoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/services-two': {
+      id: '/services/services-two'
+      path: '/services/services-two'
+      fullPath: '/services/services-two'
+      preLoaderRoute: typeof ServicesServicesTwoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/$serviceId': {
+      id: '/services/$serviceId'
+      path: '/services/$serviceId'
+      fullPath: '/services/$serviceId'
+      preLoaderRoute: typeof ServicesServiceIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/demo/tanstack-query': {
@@ -172,6 +363,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogsBlogIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/(portfolio)/4-columns': {
+      id: '/(portfolio)/4-columns'
+      path: '/4-columns'
+      fullPath: '/4-columns'
+      preLoaderRoute: typeof portfolio4ColumnsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(portfolio)/3-columns': {
+      id: '/(portfolio)/3-columns'
+      path: '/3-columns'
+      fullPath: '/3-columns'
+      preLoaderRoute: typeof portfolio3ColumnsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(portfolio)/2-columns': {
+      id: '/(portfolio)/2-columns'
+      path: '/2-columns'
+      fullPath: '/2-columns'
+      preLoaderRoute: typeof portfolio2ColumnsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(portfolio)/$portfolioId': {
+      id: '/(portfolio)/$portfolioId'
+      path: '/$portfolioId'
+      fullPath: '/$portfolioId'
+      preLoaderRoute: typeof portfolioPortfolioIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(pages)/testimonial': {
+      id: '/(pages)/testimonial'
+      path: '/testimonial'
+      fullPath: '/testimonial'
+      preLoaderRoute: typeof pagesTestimonialRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(pages)/pricing-plan': {
+      id: '/(pages)/pricing-plan'
+      path: '/pricing-plan'
+      fullPath: '/pricing-plan'
+      preLoaderRoute: typeof pagesPricingPlanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(pages)/faq': {
+      id: '/(pages)/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof pagesFaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -180,9 +420,21 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   RequestQuoteRoute: RequestQuoteRoute,
+  pagesFaqRoute: pagesFaqRoute,
+  pagesPricingPlanRoute: pagesPricingPlanRoute,
+  pagesTestimonialRoute: pagesTestimonialRoute,
+  portfolioPortfolioIdRoute: portfolioPortfolioIdRoute,
+  portfolio2ColumnsRoute: portfolio2ColumnsRoute,
+  portfolio3ColumnsRoute: portfolio3ColumnsRoute,
+  portfolio4ColumnsRoute: portfolio4ColumnsRoute,
   BlogsBlogIdRoute: BlogsBlogIdRoute,
   DemoTanstackQueryRoute: DemoTanstackQueryRoute,
+  ServicesServiceIdRoute: ServicesServiceIdRoute,
+  ServicesServicesTwoRoute: ServicesServicesTwoRoute,
+  TeamTeamTwoRoute: TeamTeamTwoRoute,
   BlogsIndexRoute: BlogsIndexRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
+  TeamIndexRoute: TeamIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

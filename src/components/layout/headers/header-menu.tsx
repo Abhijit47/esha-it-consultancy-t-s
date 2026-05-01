@@ -17,32 +17,32 @@ const MainMenu = () => {
           </a>
           <ul className="sub-menu">
             <li>
-              <a href="/about">About Us</a>
+              <Link to="/about">About Us</Link>
             </li>
             <li>
-              <a href="/testimonial">Testimonials</a>
+              <Link to="/testimonial">Testimonials</Link>
             </li>
             <li>
-              <a href="/pricing-plan">Pricing Plan</a>
+              <Link to="/pricing-plan">Pricing Plan</Link>
             </li>
             <li>
-              <a href="/faq">Faq</a>
+              <Link to="/faq">Faq</Link>
             </li>
             <li className="menu-item-has-children">
-              <a href="#">
+              <Link to="/team">
                 Team<i className="fas fa-angle-right"></i>
-              </a>
+              </Link>
               <ul className="sub-menu">
                 <li>
-                  <a href="/team">Team Style 01</a>
+                  <Link to="/team">Team Style 01</Link>
                 </li>
                 <li>
-                  <a href="/team-two">Team Style 02</a>
+                  <Link to="/team/team-two">Team Style 02</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="/request-quote">Request Quote</a>
+              <Link to="/request-quote">Request Quote</Link>
             </li>
             <li>
               <a href="/404">404</a>
@@ -50,19 +50,19 @@ const MainMenu = () => {
           </ul>
         </li>
         <li className="menu-item-has-children">
-          <a href="#">
+          <Link to="/services">
             Services <i className="fas fa-angle-down"></i>
-          </a>
+          </Link>
           <ul className="sub-menu">
             <li>
-              <a href="/services">Services 01</a>
+              <Link to="/services">Services 01</Link>
             </li>
             <li>
-              <a href="/services-two">Services 02</a>
+              <Link to="/services/services-two">Services 02</Link>
             </li>
-            <li>
-              <a href="/services/data-analytics">Services Details</a>
-            </li>
+            {/* <li>
+              <Link to="/services/data-analytics">Services Details</Link>
+            </li> */}
           </ul>
         </li>
         <li className="menu-item-has-children">
@@ -71,14 +71,17 @@ const MainMenu = () => {
           </a>
           <ul className="sub-menu">
             <li>
-              <a href="/portfolio/2-columns">2 Columns</a>
+              <Link to="/2-columns">2 Columns</Link>
             </li>
             <li>
-              <a href="/portfolio/3-columns">3 Columns</a>
+              <Link to="/3-columns">3 Columns</Link>
             </li>
             <li>
-              <a href="/portfolio/gateway-integration">Portfolio Details</a>
+              <Link to="/4-columns">4 Columns</Link>
             </li>
+            {/* <li>
+              <Link to="/gateway-integration">Portfolio Details</Link>
+            </li> */}
           </ul>
         </li>
 
